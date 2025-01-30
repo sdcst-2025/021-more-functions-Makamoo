@@ -21,8 +21,43 @@ assert triangle(1,1,4) == 0
 (2 points)
 """
 
-def triangle():
-    return
+def triangle(a,b,c):
+    if a > b:
+        if a > c:
+            hype = a
+            A = b
+            B = c
+        elif c > a:
+            hype = c
+            A = a
+            B = b
+    elif a < b:
+        if b > c:
+            hype = b
+            A = a
+            B = c
+        elif b < c:
+            hype = c
+            A = a 
+            B = b
+    elif a == b:
+        if c > a:
+            hype = c
+            A = a 
+            B = b
+        elif c == a:
+            return 1
+    st = hype**2
+    ts = A**2 + B**2
+    K = A + B
+    if st == ts:
+        return 2
+    elif hype > K:
+        return 0
+    elif st > ts:
+        return 3
+    elif st < ts:
+        return 1
 
 def tests():
     assert triangle(12,5,13) == 2     
